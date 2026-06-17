@@ -3,26 +3,36 @@
 
     
 <head>
-    <!-- Primary Meta Tags -->
-    <title>DBD Studio | Dream Build Design Studio</title>
-    <meta name="description" content="We build high-quality digital experiences for startups and brands.">
-
-    <!-- Open Graph / Facebook / WhatsApp -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://dbdstudio.vercel.app">
-    <meta property="og:title" content="DBD Studio | Dream Build Design Studio">
-    <meta property="og:description" content="Elevate your startup with our design and development services.">
-    <meta property="og:image" content="https://dbdstudio.vercel.app">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="DBD Studio">
-    <meta property="twitter:description" content="Elevate your startup with our design and development services.">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBD Studio - Dream Build Design Studio</title>
+    
+    <!-- SEO & Search Engine Optimization -->
+    <meta name="description" content="DBD Studio (Dream Build Design Studio) is a premium architectural & interior design firm specializing in retail and residential interiors, turnkey fit-out solutions, and custom styling. Led by Beulah Hephzibah in Bangalore.">
+    <meta name="keywords" content="DBD Studio, interior design bangalore, retail interior design, residential interior design, architectural design, turnkey solutions, sustainable design, Beulah Hephzibah, bangalore architects, home interior designer">
+    <meta name="author" content="DBD Studio">
+    
+    <!-- Open Graph / Facebook / WhatsApp (Link Sharing Previews) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dbd-studio.vercel.app/">
+    <meta property="og:title" content="DBD Studio | Retail & Residential Interior Design Bangalore">
+    <meta property="og:description" content="Dream Build Design Studio (DBD Studio) specializes in premium retail and residential interior design, custom styling, and turnkey fit-out solutions in Bangalore.">
+    <meta property="og:image" content="https://dbd-studio.vercel.app/photo-video/logo.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://dbd-studio.vercel.app/">
+    <meta name="twitter:title" content="DBD Studio | Retail & Residential Interior Design Bangalore">
+    <meta name="twitter:description" content="Dream Build Design Studio (DBD Studio) specializes in premium retail and residential interior design, custom styling, and turnkey fit-out solutions.">
+    <meta name="twitter:image" content="https://dbd-studio.vercel.app/photo-video/logo.png">
+
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Library for Scroll Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
@@ -42,17 +52,20 @@
             background-attachment: fixed;
         }
 
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
 
         .project-card {
-            transition: all 0.3s ease;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
             overflow: hidden;
+            cursor: pointer;
         }
-
-
 
         .project-card:hover {
             transform: scale(1.03);
@@ -61,7 +74,7 @@
         .project-overlay {
             background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.4s ease;
         }
 
         .project-card:hover .project-overlay {
@@ -77,7 +90,7 @@
             position: absolute;
             width: 0;
             height: 2px;
-            bottom: 0;
+            bottom: -4px;
             left: 0;
             background-color: #f59e0b;
             transition: width 0.3s ease;
@@ -90,40 +103,143 @@
         .active-nav::after {
             width: 100%;
         }
+
+        /* Brand Marquee looping animations */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 25s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        /* Custom Cursor Elements */
+        #custom-cursor {
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+        #custom-cursor-follower {
+            transition: width 0.3s, height 0.3s, border-color 0.3s, background-color 0.3s;
+        }
+
+        /* Mobile specific enhancements */
+        @media (max-width: 768px) {
+            .project-overlay {
+                opacity: 1 !important;
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.1) 100%) !important;
+            }
+        }
     </style>
 </head>
 
-<body class="bg-gray-50">
+<body class="bg-gray-50 overflow-x-hidden">
+    <!-- Premium Portfolio Lightbox Modal -->
+    <div id="project-lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 md:p-8 bg-slate-950/90 backdrop-blur-xl opacity-0 transition-opacity duration-300">
+        <!-- Close Button (Absolute Top Right) -->
+        <button id="lightbox-close" class="absolute top-6 right-6 z-50 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all duration-200 active:scale-95" aria-label="Close modal">
+            <i class="fas fa-times text-2xl"></i>
+        </button>
+
+        <!-- Navigation Buttons -->
+        <button id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 z-50 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 p-4 rounded-full transition-all duration-200 active:scale-95 hidden md:block" aria-label="Previous project">
+            <i class="fas fa-chevron-left text-2xl"></i>
+        </button>
+        <button id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 z-50 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 p-4 rounded-full transition-all duration-200 active:scale-95 hidden md:block" aria-label="Next project">
+            <i class="fas fa-chevron-right text-2xl"></i>
+        </button>
+
+        <!-- Main Modal Content Container -->
+        <div class="relative w-full max-w-5xl bg-slate-900 border border-white/10 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row max-h-[90vh] md:max-h-[80vh] transform scale-95 transition-transform duration-300" id="lightbox-content">
+            <!-- Left Side: Interactive Image with Mobile Controls -->
+            <div class="relative w-full md:w-3/5 bg-slate-950 flex items-center justify-center min-h-[300px] md:min-h-0">
+                <img id="lightbox-img" src="" alt="Project Image" class="w-full h-full object-contain max-h-[50vh] md:max-h-[80vh]">
+                
+                <!-- Mobile Only Navigation Overlays -->
+                <div class="absolute inset-y-0 left-0 w-1/2 flex items-center pl-4 md:hidden">
+                    <button id="lightbox-prev-mobile" class="text-white/75 bg-slate-950/40 p-3 rounded-full" aria-label="Previous project">
+                        <i class="fas fa-chevron-left text-lg"></i>
+                    </button>
+                </div>
+                <div class="absolute inset-y-0 right-0 w-1/2 flex items-center justify-end pr-4 md:hidden">
+                    <button id="lightbox-next-mobile" class="text-white/75 bg-slate-950/40 p-3 rounded-full" aria-label="Next project">
+                        <i class="fas fa-chevron-right text-lg"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Side: Beautiful Project Info -->
+            <div class="w-full md:w-2/5 p-6 md:p-8 flex flex-col justify-between bg-slate-900 text-white overflow-y-auto">
+                <div class="space-y-6">
+                    <div>
+                        <span id="lightbox-category" class="inline-block px-3 py-1 text-xs font-semibold tracking-widest text-amber-500 uppercase border border-amber-500/30 rounded-full mb-3">Category</span>
+                        <h2 id="lightbox-title" class="title-font text-2xl md:text-3xl font-bold tracking-tight text-white mb-2">Project Title</h2>
+                        <p id="lightbox-subtitle" class="text-gray-400 text-sm italic">Project Subtitle</p>
+                    </div>
+
+                    <div class="w-12 h-1 bg-amber-500"></div>
+
+                    <div>
+                        <h4 class="text-xs uppercase tracking-wider text-gray-500 font-bold mb-2">Design Strategy & Details</h4>
+                        <p id="lightbox-desc" class="text-gray-300 text-sm leading-relaxed">
+                            Full strategic architectural design details go here.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between text-xs text-gray-400">
+                    <div>
+                        <span class="block text-gray-500 uppercase font-bold">Location</span>
+                        <span id="lightbox-location" class="font-medium text-gray-300">Bangalore, India</span>
+                    </div>
+                    <div>
+                        <span class="block text-gray-500 uppercase font-bold">Timeline</span>
+                        <span id="lightbox-year" class="font-medium text-gray-300">2026 Edition</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Circle Cursor -->
+    <div id="custom-cursor" class="hidden lg:block fixed pointer-events-none z-[9999] w-3 h-3 bg-amber-500 rounded-full mix-blend-difference -translate-x-1/2 -translate-y-1/2 transition-transform duration-100 ease-out"></div>
+    <div id="custom-cursor-follower" class="hidden lg:block fixed pointer-events-none z-[9998] w-8 h-8 border-2 border-amber-500 rounded-full -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out"></div>
+
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white shadow-md z-50">
-        <div class="container mx-auto px-4 py-3">
+    <nav id="main-nav" class="fixed w-full z-50 transition-all duration-300 bg-slate-900/30 backdrop-blur-md border-b border-white/10 py-4">
+        <div class="container mx-auto px-6">
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
                     <img src="photo-video/logo.png" alt="DBD Studio Logo" class="h-12" loading="lazy">
                 </div>
 
                 <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link text-gray-700 hover:text-amber-500 font-medium active-nav">Home</a>
-                    <a href="#about" class="nav-link text-gray-700 hover:text-amber-500 font-medium">About</a>
-                    <a href="#services" class="nav-link text-gray-700 hover:text-amber-500 font-medium">Services</a>
-                    <a href="#projects" class="nav-link text-gray-700 hover:text-amber-500 font-medium">Projects</a>
-                    <a href="#contact" class="nav-link text-gray-700 hover:text-amber-500 font-medium">Contact</a>
+                    <a href="index.html"
+                        class="nav-link text-white hover:text-amber-400 font-medium active-nav transition-colors">Home</a>
+                    <a href="company-profile.html"
+                        class="nav-link text-white hover:text-amber-400 font-medium transition-colors">About</a>
+                    <a href="#services" class="nav-link text-white hover:text-amber-400 font-medium transition-colors">Services</a>
+                    <a href="#projects" class="nav-link text-white hover:text-amber-400 font-medium transition-colors">Projects</a>
+                    <a href="#contact" class="nav-link text-white hover:text-amber-400 font-medium transition-colors">Contact</a>
                 </div>
 
-                <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none transition-colors">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4 shadow-lg">
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-6 shadow-lg border-b border-gray-100 transition-all duration-300 ease-in-out transform origin-top scale-y-0 opacity-0">
             <div class="flex flex-col space-y-4">
-                <a href="#home" class="text-gray-700 hover:text-amber-500 font-medium">Home</a>
-                <a href="#about" class="text-gray-700 hover:text-amber-500 font-medium">About</a>
-                <a href="#services" class="text-gray-700 hover:text-amber-500 font-medium">Services</a>
-                <a href="#projects" class="text-gray-700 hover:text-amber-500 font-medium">Projects</a>
-                <a href="#contact" class="text-gray-700 hover:text-amber-500 font-medium">Contact</a>
+                <a href="index.html" class="text-gray-700 hover:text-amber-500 font-medium py-2 border-b border-gray-50">Home</a>
+                <a href="company-profile.html" class="text-gray-700 hover:text-amber-500 font-medium py-2 border-b border-gray-50">About</a>
+                <a href="#services" class="text-gray-700 hover:text-amber-500 font-medium py-2 border-b border-gray-50">Services</a>
+                <a href="#projects" class="text-gray-700 hover:text-amber-500 font-medium py-2 border-b border-gray-50">Projects</a>
+                <a href="#contact" class="text-gray-700 hover:text-amber-500 font-medium py-2">Contact</a>
             </div>
         </div>
     </nav>
@@ -132,22 +248,26 @@
     <section id="home" class="hero-section pt-24 pb-32 md:pt-32 md:pb-48 text-white flex items-center">
         <div class="container mx-auto px-4">
             <div class="max-w-3xl">
-                <h1 class="title-font text-4xl md:text-6xl font-bold mb-4 leading-tight">
+                <h1 class="title-font text-4xl md:text-6xl font-bold mb-4 leading-tight" data-aos="fade-up">
                     Transforming Retail & Residential Spaces into <span class="text-amber-400">Remarkable
                         Experiences</span>
                 </h1>
-                <p class="text-lg md:text-xl mb-8 leading-relaxed">
+                <p class="text-lg md:text-xl mb-8 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
                     We craft interior environments that seamlessly integrate brand identity, merchandise flow, and
                     customer journey dynamics.
                 </p>
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4" data-aos="fade-up" data-aos-delay="400">
                     <a href="#contact"
                         class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300">
                         Get in Touch
                     </a>
-                    <a href="#projects"
+                    <a href="pitch-deck.html"
                         class="bg-transparent hover:bg-white hover:text-gray-900 border-2 border-white text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300">
-                        View Projects
+                        Quick Pitch Deck
+                    </a>
+                    <a href="company-profile-ppt.html"
+                        class="bg-amber-500 hover:bg-amber-600 border-2 border-amber-500 text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300">
+                        Detailed PPT Profile
                     </a>
                 </div>
             </div>
@@ -155,20 +275,20 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-16 md:py-24 bg-white">
+    <section id="about" class="py-16 md:py-24 bg-white overflow-hidden">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="title-font text-3xl md:text-4xl font-bold text-gray-800 mb-4">About DBD Studio</h2>
                 <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
             </div>
 
             <div class="flex flex-col lg:flex-row items-center gap-12">
-                <div class="lg:w-1/2">
+                <div class="lg:w-1/2" data-aos="fade-right">
                     <img src="photo-video/WhatsApp Image 2025-08-11 at 10.51.16 (1).jpeg" alt="DBD Studio Team"
                         class="rounded-lg shadow-xl w-full h-auto" loading="lazy">
                 </div>
 
-                <div class="lg:w-1/2">
+                <div class="lg:w-1/2" data-aos="fade-left">
                     <h3 class="title-font text-2xl md:text-3xl font-bold text-gray-800 mb-6">
                         Dream Build Design Studio
                     </h3>
@@ -185,7 +305,7 @@
                     </p>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-100">
+                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-100" data-aos="fade-up" data-aos-delay="200">
                             <div class="text-amber-500 text-3xl mb-3">
                                 <i class="fas fa-eye"></i>
                             </div>
@@ -196,7 +316,7 @@
                             </p>
                         </div>
 
-                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-100">
+                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-100" data-aos="fade-up" data-aos-delay="300">
                             <div class="text-amber-500 text-3xl mb-3">
                                 <i class="fas fa-bullseye"></i>
                             </div>
@@ -212,9 +332,37 @@
         </div>
     </section>
 
+    <!-- Brand Partnerships Marquee -->
+    <section class="py-12 bg-white border-t border-b border-gray-100 overflow-hidden">
+        <div class="container mx-auto px-4 mb-6 text-center">
+            <p class="text-xs uppercase tracking-widest text-amber-600 font-bold">Brands We've Worked With</p>
+        </div>
+        <div class="relative w-full flex items-center overflow-x-hidden">
+            <!-- Fade overlays on sides -->
+            <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+            
+            <div class="animate-marquee flex gap-16 items-center py-2">
+                <span class="text-2xl md:text-3xl font-bold tracking-tight text-gray-300 hover:text-amber-500 transition-colors duration-300 select-none">CHUMBAK</span>
+                <span class="text-2xl md:text-3xl font-bold tracking-tight text-gray-300 hover:text-amber-500 transition-colors duration-300 select-none">FRANGIPANI</span>
+                <span class="text-2xl md:text-3xl font-bold tracking-tight text-gray-300 hover:text-amber-500 transition-colors duration-300 select-none">MURMURA</span>
+                <span class="text-2xl md:text-3xl font-bold tracking-tight text-gray-300 hover:text-amber-500 transition-colors duration-300 select-none">BROWN BOY CAFE</span>
+                <span class="text-2xl md:text-3xl font-bold tracking-tight text-gray-300 hover:text-amber-500 transition-colors duration-300 select-none">THE TROST</span>
+                <span class="text-2xl md:text-3xl font-bold tracking-tight text-gray-300 hover:text-amber-500 transition-colors duration-300 select-none">SIGNATURE FELICITY</span>
+                <!-- Duplicate for seamless loop -->
+                <span class="text-2xl md:text-3xl font-bold tracking-tight text-gray-300 hover:text-amber-500 transition-colors duration-300 select-none">CHUMBAK</span>
+                <span class="text-2xl md:text-3xl font-bold tracking-tight text-gray-300 hover:text-amber-500 transition-colors duration-300 select-none">FRANGIPANI</span>
+                <span class="text-2xl md:text-3xl font-bold tracking-tight text-gray-300 hover:text-amber-500 transition-colors duration-300 select-none">MURMURA</span>
+                <span class="text-2xl md:text-3xl font-bold tracking-tight text-gray-300 hover:text-amber-500 transition-colors duration-300 select-none">BROWN BOY CAFE</span>
+                <span class="text-2xl md:text-3xl font-bold tracking-tight text-gray-300 hover:text-amber-500 transition-colors duration-300 select-none">THE TROST</span>
+                <span class="text-2xl md:text-3xl font-bold tracking-tight text-gray-300 hover:text-amber-500 transition-colors duration-300 select-none">SIGNATURE FELICITY</span>
+            </div>
+        </div>
+    </section>
+
     <!-- Philosophy Section -->
-    <section class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4">
+    <section class="py-16 bg-gray-100 overflow-hidden">
+        <div class="container mx-auto px-4" data-aos="zoom-in">
             <div class="max-w-4xl mx-auto text-center">
                 <div class="text-amber-500 text-5xl mb-6">
                     <i class="fas fa-quote-left"></i>
@@ -232,16 +380,16 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-16 md:py-24 bg-white">
+    <section id="services" class="py-16 md:py-24 bg-white overflow-hidden">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="title-font text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Services</h2>
                 <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 1 -->
-                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="100">
                     <div class="h-48 bg-gray-800 flex items-center justify-center">
                         <i class="fas fa-store text-5xl text-amber-500"></i>
                     </div>
@@ -256,7 +404,7 @@
                 </div>
 
                 <!-- Service 2 -->
-                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="200">
                     <div class="h-48 bg-gray-800 flex items-center justify-center">
                         <i class="fas fa-tools text-5xl text-amber-500"></i>
                     </div>
@@ -270,7 +418,7 @@
                 </div>
 
                 <!-- Service 3 -->
-                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="300">
                     <div class="h-48 bg-gray-800 flex items-center justify-center">
                         <i class="fas fa-building text-5xl text-amber-500"></i>
                     </div>
@@ -283,7 +431,7 @@
                 </div>
 
                 <!-- Service 4 -->
-                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="100">
                     <div class="h-48 bg-gray-800 flex items-center justify-center">
                         <i class="fas fa-paint-brush text-5xl text-amber-500"></i>
                     </div>
@@ -297,7 +445,7 @@
                 </div>
 
                 <!-- Service 5 -->
-                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="200">
                     <div class="h-48 bg-gray-800 flex items-center justify-center">
                         <i class="fas fa-leaf text-5xl text-amber-500"></i>
                     </div>
@@ -311,7 +459,7 @@
                 </div>
 
                 <!-- Service 6 -->
-                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="300">
                     <div class="h-48 bg-gray-800 flex items-center justify-center">
                         <i class="fas fa-lightbulb text-5xl text-amber-500"></i>
                     </div>
@@ -328,15 +476,15 @@
     </section>
 
     <!-- Approach Section -->
-    <section class="py-16 bg-gray-100">
+    <section class="py-16 bg-gray-100 overflow-hidden">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="title-font text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Approach</h2>
                 <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-sm text-center">
+                <div class="bg-white p-8 rounded-lg shadow-sm text-center" data-aos="fade-up" data-aos-delay="100">
                     <div class="text-amber-500 text-4xl mb-4">
                         <i class="fas fa-users"></i>
                     </div>
@@ -347,7 +495,7 @@
                     </p>
                 </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-sm text-center">
+                <div class="bg-white p-8 rounded-lg shadow-sm text-center" data-aos="fade-up" data-aos-delay="200">
                     <div class="text-amber-500 text-4xl mb-4">
                         <i class="fas fa-rocket"></i>
                     </div>
@@ -357,7 +505,7 @@
                     </p>
                 </div>
 
-                <div class="bg-white p-8 rounded-lg shadow-sm text-center">
+                <div class="bg-white p-8 rounded-lg shadow-sm text-center" data-aos="fade-up" data-aos-delay="300">
                     <div class="text-amber-500 text-4xl mb-4">
                         <i class="fas fa-search"></i>
                     </div>
@@ -371,18 +519,24 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-16 md:py-24 bg-white">
+    <section id="projects" class="py-16 md:py-24 bg-white overflow-hidden">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="title-font text-3xl md:text-4xl font-bold text-gray-800 mb-4">Retail & Residential Portfolio
-                    Highlights</h2>
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="title-font text-3xl md:text-4xl font-bold text-gray-800 mb-4">Retail & Residential Portfolio Highlights</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">From vision to reality—our projects speak volumes.</p>
                 <div class="w-20 h-1 bg-amber-500 mx-auto mt-4"></div>
             </div>
 
+            <!-- Project Category Filter Tabs -->
+            <div class="flex justify-center space-x-2 md:space-x-4 mb-12 flex-wrap gap-y-3" data-aos="fade-up">
+                <button class="filter-btn px-6 py-2 rounded-full border border-amber-500 bg-amber-500 text-white font-medium text-sm transition-all duration-300 shadow-sm active:scale-95" data-filter="all">All Projects</button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-gray-200 text-gray-600 hover:border-amber-500 hover:text-amber-500 font-medium text-sm transition-all duration-300 shadow-sm active:scale-95" data-filter="retail">Retail & Commercial</button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-gray-200 text-gray-600 hover:border-amber-500 hover:text-amber-500 font-medium text-sm transition-all duration-300 shadow-sm active:scale-95" data-filter="culinary">Culinary & Cafe</button>
+            </div>
+
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Project 1 -->
-                <div class="project-card relative rounded-lg overflow-hidden shadow-md">
+                <div class="project-card relative rounded-lg overflow-hidden shadow-md" data-category="retail" data-aos="fade-up" data-aos-delay="100">
                     <img src="photo-video/CHUMBAK.jpeg" alt="CHUMBAK Project" class="w-full h-64 object-cover"
                         loading="lazy">
                     <div class="project-overlay absolute inset-0 flex items-end p-6">
@@ -394,7 +548,7 @@
                 </div>
 
                 <!-- Project 2 -->
-                <div class="project-card relative rounded-lg overflow-hidden shadow-md">
+                <div class="project-card relative rounded-lg overflow-hidden shadow-md" data-category="retail" data-aos="fade-up" data-aos-delay="200">
                     <img src="photo-video/FRANGIPANI.jpeg" alt="FRANGIPANI Project" class="w-full h-64 object-cover"
                         loading="lazy">
                     <div class="project-overlay absolute inset-0 flex items-end p-6">
@@ -406,7 +560,7 @@
                 </div>
 
                 <!-- Project 3 -->
-                <div class="project-card relative rounded-lg overflow-hidden shadow-md">
+                <div class="project-card relative rounded-lg overflow-hidden shadow-md" data-category="retail" data-aos="fade-up" data-aos-delay="300">
                     <img src="photo-video/WhatsApp Image 2025-08-11 at 10.51.32 (2).jpeg"
                         alt="S.L. SHET DIAMOND HOUSE Project" class="w-full h-64 object-cover" loading="lazy">
                     <div class="project-overlay absolute inset-0 flex items-end p-6">
@@ -418,7 +572,7 @@
                 </div>
 
                 <!-- Project 4 -->
-                <div class="project-card relative rounded-lg overflow-hidden shadow-md">
+                <div class="project-card relative rounded-lg overflow-hidden shadow-md" data-category="retail" data-aos="fade-up" data-aos-delay="100">
                     <img src="photo-video/SIGNATURE FELICITY.jpeg" alt="SIGNATURE FELICITY Project"
                         class="w-full h-64 object-cover" loading="lazy">
                     <div class="project-overlay absolute inset-0 flex items-end p-6">
@@ -430,7 +584,7 @@
                 </div>
 
                 <!-- Project 5 -->
-                <div class="project-card relative rounded-lg overflow-hidden shadow-md">
+                <div class="project-card relative rounded-lg overflow-hidden shadow-md" data-category="retail">
                     <img src="photo-video/DHOBILITE.jpeg" alt="DHOBILITE Project" class="w-full h-64 object-cover"
                         loading="lazy">
                     <div class="project-overlay absolute inset-0 flex items-end p-6">
@@ -442,7 +596,7 @@
                 </div>
 
                 <!-- Project 6 -->
-                <div class="project-card relative rounded-lg overflow-hidden shadow-md">
+                <div class="project-card relative rounded-lg overflow-hidden shadow-md" data-category="culinary">
                     <img src="photo-video/WhatsApp Image 2025-08-11 at 10.51.35 (1).jpeg" alt="MURMURA (CAFE) Project"
                         class="w-full h-64 object-cover" loading="lazy">
                     <div class="project-overlay absolute inset-0 flex items-end p-6">
@@ -454,7 +608,7 @@
                 </div>
 
                 <!-- Project 7 -->
-                <div class="project-card relative rounded-lg overflow-hidden shadow-md">
+                <div class="project-card relative rounded-lg overflow-hidden shadow-md" data-category="culinary">
                     <img src="photo-video/new/brown_boy_cafe.jpeg" alt="Brown Boy Cafe" class="w-full h-64 object-cover"
                         loading="lazy">
                     <div class="project-overlay absolute inset-0 flex items-end p-6">
@@ -466,7 +620,7 @@
                 </div>
 
                 <!-- Project 8 -->
-                <div class="project-card relative rounded-lg overflow-hidden shadow-md">
+                <div class="project-card relative rounded-lg overflow-hidden shadow-md" data-category="culinary">
                     <img src="photo-video/new/brown_boy_cafe_interior.jpeg" alt="Brown Boy Cafe Interior"
                         class="w-full h-64 object-cover" loading="lazy">
                     <div class="project-overlay absolute inset-0 flex items-end p-6">
@@ -478,7 +632,7 @@
                 </div>
 
                 <!-- Project 9 -->
-                <div class="project-card relative rounded-lg overflow-hidden shadow-md">
+                <div class="project-card relative rounded-lg overflow-hidden shadow-md" data-category="culinary">
                     <img src="photo-video/new/sandowitch_inside_view.jpeg" alt="Sandowitch Inside View"
                         class="w-full h-64 object-cover" loading="lazy">
                     <div class="project-overlay absolute inset-0 flex items-end p-6">
@@ -490,7 +644,7 @@
                 </div>
 
                 <!-- Project 10 -->
-                <div class="project-card relative rounded-lg overflow-hidden shadow-md">
+                <div class="project-card relative rounded-lg overflow-hidden shadow-md" data-category="culinary">
                     <img src="photo-video/new/sandowitch_outsideview.jpeg" alt="Sandowitch Outside View"
                         class="w-full h-64 object-cover" loading="lazy">
                     <div class="project-overlay absolute inset-0 flex items-end p-6">
@@ -502,7 +656,7 @@
                 </div>
 
                 <!-- Project 11 -->
-                <div class="project-card relative rounded-lg overflow-hidden shadow-md">
+                <div class="project-card relative rounded-lg overflow-hidden shadow-md" data-category="culinary">
                     <img src="photo-video/new/the_trost_inside.jpeg" alt="The Trost Inside"
                         class="w-full h-64 object-cover" loading="lazy">
                     <div class="project-overlay absolute inset-0 flex items-end p-6">
@@ -514,7 +668,7 @@
                 </div>
 
                 <!-- Project 12 -->
-                <div class="project-card relative rounded-lg overflow-hidden shadow-md">
+                <div class="project-card relative rounded-lg overflow-hidden shadow-md" data-category="culinary">
                     <img src="photo-video/new/the_trost_outside.jpeg" alt="The Trost Outside"
                         class="w-full h-64 object-cover" loading="lazy">
                     <div class="project-overlay absolute inset-0 flex items-end p-6">
@@ -788,14 +942,66 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- AOS Animation Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Mobile Menu Toggle
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+            delay: 100
+        });
+
+        // Mobile Menu Toggle with Smooth Animation
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
         mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                setTimeout(() => {
+                    mobileMenu.classList.remove('scale-y-0', 'opacity-0');
+                    mobileMenu.classList.add('scale-y-100', 'opacity-100');
+                }, 10);
+            } else {
+                mobileMenu.classList.remove('scale-y-100', 'opacity-100');
+                mobileMenu.classList.add('scale-y-0', 'opacity-0');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+            }
         });
+
+        // Navbar scroll transition
+        const nav = document.getElementById('main-nav');
+        const headerNavLinks = nav.querySelectorAll('.nav-link');
+        
+        function handleScroll() {
+            if (window.scrollY > 50) {
+                nav.classList.remove('bg-slate-900/30', 'border-white/10', 'py-4');
+                nav.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-md', 'border-gray-100', 'py-3');
+                headerNavLinks.forEach(link => {
+                    link.classList.remove('text-white', 'hover:text-amber-400');
+                    link.classList.add('text-gray-700', 'hover:text-amber-600');
+                });
+                mobileMenuButton.classList.remove('text-white');
+                mobileMenuButton.classList.add('text-gray-700');
+            } else {
+                nav.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-md', 'border-gray-100', 'py-3');
+                nav.classList.add('bg-slate-900/30', 'border-white/10', 'py-4');
+                headerNavLinks.forEach(link => {
+                    link.classList.remove('text-gray-700', 'hover:text-amber-600');
+                    link.classList.add('text-white', 'hover:text-amber-400');
+                });
+                mobileMenuButton.classList.remove('text-gray-700');
+                mobileMenuButton.classList.add('text-white');
+            }
+        }
+        
+        window.addEventListener('scroll', handleScroll);
+        // Run on load in case the page is already scrolled down
+        handleScroll();
 
         // Smooth Scrolling for Navigation Links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -812,14 +1018,17 @@
                     });
 
                     // Close mobile menu if open
-                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('scale-y-100', 'opacity-100');
+                    mobileMenu.classList.add('scale-y-0', 'opacity-0');
+                    setTimeout(() => {
+                        mobileMenu.classList.add('hidden');
+                    }, 300);
                 }
             });
         });
 
         // Highlight active navigation link on scroll
         const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
 
         window.addEventListener('scroll', () => {
             let current = '';
@@ -828,14 +1037,14 @@
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
 
-                if (pageYOffset >= (sectionTop - 100)) {
+                if (window.pageYOffset >= (sectionTop - 120)) {
                     current = section.getAttribute('id');
                 }
             });
 
-            navLinks.forEach(link => {
+            headerNavLinks.forEach(link => {
                 link.classList.remove('active-nav');
-                if (link.getAttribute('href') === `#${current}`) {
+                if (link.getAttribute('href') === `#${current}` || (current === 'home' && link.getAttribute('href') === 'index.html')) {
                     link.classList.add('active-nav');
                 }
             });
@@ -867,7 +1076,7 @@
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            // Show a loading text or indicator on the button (optional)
+            // Show a loading text or indicator on the button
             const submitButton = contactForm.querySelector('button[type="submit"]');
             const originalText = submitButton.innerText;
             submitButton.innerText = 'Sending...';
@@ -892,6 +1101,293 @@
             } finally {
                 // Restore button text
                 submitButton.innerText = originalText;
+            }
+        });
+
+        // Portfolio Filtering logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update button active state
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-amber-500', 'text-white', 'border-amber-500');
+                    b.classList.add('border-gray-200', 'text-gray-600');
+                });
+                
+                btn.classList.remove('border-gray-200', 'text-gray-600');
+                btn.classList.add('bg-amber-500', 'text-white', 'border-amber-500');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (filterValue === 'all' || cardCategory === filterValue) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Premium Custom Cursor Followers
+        const cursor = document.getElementById('custom-cursor');
+        const follower = document.getElementById('custom-cursor-follower');
+        
+        let mouseX = 0;
+        let mouseY = 0;
+        let followerX = 0;
+        let followerY = 0;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            cursor.style.left = mouseX + 'px';
+            cursor.style.top = mouseY + 'px';
+        });
+
+        function animateFollower() {
+            const ease = 0.15;
+            followerX += (mouseX - followerX) * ease;
+            followerY += (mouseY - followerY) * ease;
+            follower.style.left = followerX + 'px';
+            follower.style.top = followerY + 'px';
+            requestAnimationFrame(animateFollower);
+        }
+        animateFollower();
+
+        // Hover expansions for premium responsiveness
+        const interactiveElements = document.querySelectorAll('a, button, .service-card, .project-card, input, textarea');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('scale-75');
+                follower.classList.add('scale-150', 'bg-amber-500/10');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('scale-75');
+                follower.classList.remove('scale-150', 'bg-amber-500/10');
+            });
+        });
+
+        // Detailed Projects Dataset for Presentation Mode Lightbox
+        const projectsData = [
+            {
+                title: "CHUMBAK",
+                subtitle: "Colorful retail space design",
+                category: "Retail & Commercial",
+                desc: "A vibrant retail outlet featuring bold color blocks, custom wood millwork, and strategic lighting layouts to highlight product merchandise and optimize foot traffic flow.",
+                img: "photo-video/CHUMBAK.jpeg",
+                location: "Bangalore, India",
+                year: "2026 Edition"
+            },
+            {
+                title: "FRANGIPANI",
+                subtitle: "Luxury boutique concept",
+                category: "Retail & Commercial",
+                desc: "An upscale boutique design balancing soft pastel tones with elegant brass accents, presenting a high-end curated shopping experience for premium apparel.",
+                img: "photo-video/FRANGIPANI.jpeg",
+                location: "Bangalore, India",
+                year: "2026 Edition"
+            },
+            {
+                title: "S.L. SHET DIAMOND HOUSE",
+                subtitle: "Premium jewelry retail design",
+                category: "Retail & Commercial",
+                desc: "A luxurious jewelry showroom designed with security, micro-spotlighting, and comfortable viewing alcoves to facilitate private consultations and high-value sales.",
+                img: "photo-video/WhatsApp Image 2025-08-11 at 10.51.32 (2).jpeg",
+                location: "Bangalore, India",
+                year: "2026 Edition"
+            },
+            {
+                title: "SIGNATURE FELICITY",
+                subtitle: "Modern lifestyle store",
+                category: "Retail & Commercial",
+                desc: "A lifestyle store leveraging open-floor planning, neutral concrete finishes, and geometric display fixtures to create a modern, uncluttered shopping path.",
+                img: "photo-video/SIGNATURE FELICITY.jpeg",
+                location: "Bangalore, India",
+                year: "2026 Edition"
+            },
+            {
+                title: "DHOBILITE",
+                subtitle: "Laundry service branding",
+                category: "Retail & Commercial",
+                desc: "A clean, modular franchise layout combining corporate brand colors with durable, water-resistant surfaces for a high-efficiency commercial workflow.",
+                img: "photo-video/DHOBILITE.jpeg",
+                location: "Bangalore, India",
+                year: "2026 Edition"
+            },
+            {
+                title: "MURMURA (CAFE)",
+                subtitle: "Cozy café interior design",
+                category: "Culinary & Cafe",
+                desc: "A warm café interior featuring exposed brick walls, warm pendant lighting, and comfortable seating layouts to encourage extended stays and community gatherings.",
+                img: "photo-video/WhatsApp Image 2025-08-11 at 10.51.35 (1).jpeg",
+                location: "Bangalore, India",
+                year: "2026 Edition"
+            },
+            {
+                title: "Brown Boy Cafe",
+                subtitle: "Cafe Exterior Design",
+                category: "Culinary & Cafe",
+                desc: "A striking, modern cafe facade incorporating dark wood paneling and large glass windows to maximize natural lighting and invite street traffic.",
+                img: "photo-video/new/brown_boy_cafe.jpeg",
+                location: "Bangalore, India",
+                year: "2026 Edition"
+            },
+            {
+                title: "Brown Boy Cafe Interior",
+                subtitle: "Industrial Cozy Interior",
+                category: "Culinary & Cafe",
+                desc: "An industrial-inspired cozy interior featuring custom metal accents, rustic wood tables, and cozy booths optimized for both remote work and social dining.",
+                img: "photo-video/new/brown_boy_cafe_interior.jpeg",
+                location: "Bangalore, India",
+                year: "2026 Edition"
+            },
+            {
+                title: "Sandowitch",
+                subtitle: "Modern Interior Styling",
+                category: "Culinary & Cafe",
+                desc: "A sleek quick-service restaurant interior utilizing clean lines, bright white tiling, and contrasting amber lighting to reflect freshness and speed.",
+                img: "photo-video/new/sandowitch_inside_view.jpeg",
+                location: "Bangalore, India",
+                year: "2026 Edition"
+            },
+            {
+                title: "Sandowitch Exterior",
+                subtitle: "Inviting Storefront",
+                category: "Culinary & Cafe",
+                desc: "An eye-catching storefront layout featuring a modern canopy, neon signage, and clean window displays that stand out on high-traffic retail streets.",
+                img: "photo-video/new/sandowitch_outsideview.jpeg",
+                location: "Bangalore, India",
+                year: "2026 Edition"
+            },
+            {
+                title: "The Trost",
+                subtitle: "Elegant Dining Setup",
+                category: "Culinary & Cafe",
+                desc: "A high-end dining space featuring bespoke velvet seating, acoustic wood paneling, and intimate dimming configurations to offer an elite culinary escape.",
+                img: "photo-video/new/the_trost_inside.jpeg",
+                location: "Bangalore, India",
+                year: "2026 Edition"
+            },
+            {
+                title: "The Trost Exterior",
+                subtitle: "Contemporary Facade",
+                category: "Culinary & Cafe",
+                desc: "A grand contemporary restaurant facade featuring steel arches, decorative uplighting, and a modern entrance portal that establishes landmark status.",
+                img: "photo-video/new/the_trost_outside.jpeg",
+                location: "Bangalore, India",
+                year: "2026 Edition"
+            }
+        ];
+
+        let currentProjectIndex = 0;
+        const lightbox = document.getElementById('project-lightbox');
+        const lightboxContent = document.getElementById('lightbox-content');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxTitle = document.getElementById('lightbox-title');
+        const lightboxSubtitle = document.getElementById('lightbox-subtitle');
+        const lightboxCategory = document.getElementById('lightbox-category');
+        const lightboxDesc = document.getElementById('lightbox-desc');
+        const lightboxLocation = document.getElementById('lightbox-location');
+        const lightboxYear = document.getElementById('lightbox-year');
+
+        const closeBtn = document.getElementById('lightbox-close');
+        const prevBtn = document.getElementById('lightbox-prev');
+        const nextBtn = document.getElementById('lightbox-next');
+        const prevBtnMobile = document.getElementById('lightbox-prev-mobile');
+        const nextBtnMobile = document.getElementById('lightbox-next-mobile');
+
+        // Function to open lightbox with details
+        function openLightbox(index) {
+            currentProjectIndex = index;
+            const project = projectsData[index];
+
+            lightboxImg.src = project.img;
+            lightboxImg.alt = project.title;
+            lightboxTitle.innerText = project.title;
+            lightboxSubtitle.innerText = project.subtitle;
+            lightboxCategory.innerText = project.category;
+            lightboxDesc.innerText = project.desc;
+            lightboxLocation.innerText = project.location;
+            lightboxYear.innerText = project.year;
+
+            // Show lightbox
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            setTimeout(() => {
+                lightbox.classList.remove('opacity-0');
+                lightboxContent.classList.remove('scale-95');
+                lightboxContent.classList.add('scale-100');
+            }, 10);
+            
+            // Disable page scroll
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Function to close lightbox
+        function closeLightbox() {
+            lightbox.classList.add('opacity-0');
+            lightboxContent.classList.remove('scale-100');
+            lightboxContent.classList.add('scale-95');
+            setTimeout(() => {
+                lightbox.classList.remove('flex');
+                lightbox.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        function showNextProject() {
+            let nextIndex = (currentProjectIndex + 1) % projectsData.length;
+            openLightbox(nextIndex);
+        }
+
+        function showPrevProject() {
+            let prevIndex = (currentProjectIndex - 1 + projectsData.length) % projectsData.length;
+            openLightbox(prevIndex);
+        }
+
+        // Attach click listeners to cards
+        projectCards.forEach((card, idx) => {
+            card.addEventListener('click', () => {
+                openLightbox(idx);
+            });
+        });
+
+        // Event listeners
+        closeBtn.addEventListener('click', closeLightbox);
+        prevBtn.addEventListener('click', showPrevProject);
+        nextBtn.addEventListener('click', showNextProject);
+        prevBtnMobile.addEventListener('click', showPrevProject);
+        nextBtnMobile.addEventListener('click', showNextProject);
+
+        // Close on clicking backdrop
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Keyboard navigation
+        window.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('flex')) {
+                if (e.key === 'ArrowRight') {
+                    showNextProject();
+                } else if (e.key === 'ArrowLeft') {
+                    showPrevProject();
+                } else if (e.key === 'Escape') {
+                    closeLightbox();
+                }
             }
         });
     </script>

@@ -1,0 +1,20 @@
+# Temporary & Tool files
+.stitch/
+.DS_Store
+.idea/
+.vscode/
+
+# Generated Presentation Artifacts (Binaries)
+*.pdf
+*.pptx
+ppt/
+photo-video/generated/
+
+# Python caching and environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+venv/
+.venv/

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>DBD Studio | Architectural Curator Pitch Deck</title>
+
+  <!-- SEO & Search Engine Optimization -->
+  <meta name="description" content="Explore DBD Studio's architectural pitch deck. High-end retail and residential interior design solutions curated by Beulah Hephzibah in Bangalore.">
+  <meta name="keywords" content="DBD Studio, pitch deck, architectural pitch deck, luxury interiors, retail interior design bangalore, Beulah Hephzibah">
+  <meta name="author" content="DBD Studio">
+  
+  <!-- Open Graph / Facebook / WhatsApp (Link Sharing Previews) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dbd-studio.vercel.app/pitch-deck.html">
+  <meta property="og:title" content="DBD Studio | Architectural Curator Pitch Deck">
+  <meta property="og:description" content="Dream Build Design Studio (DBD Studio) specializes in premium retail and residential interior design and turnkey fit-out solutions.">
+  <meta property="og:image" content="https://dbd-studio.vercel.app/photo-video/logo.png">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://dbd-studio.vercel.app/pitch-deck.html">
+  <meta name="twitter:title" content="DBD Studio | Architectural Curator Pitch Deck">
+  <meta name="twitter:description" content="Dream Build Design Studio (DBD Studio) specializes in premium retail and residential interior design and turnkey fit-out solutions.">
+  <meta name="twitter:image" content="https://dbd-studio.vercel.app/photo-video/logo.png">
+
+  <!-- FontAwesome for Iconography -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@400;500;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed-dim": "#ffb95f",
+            "surface-container-low": "#f1f3ff",
+            "surface-container-high": "#e1e8fd",
+            "on-tertiary-fixed": "#121c28",
+            "on-primary": "#ffffff",
+            "surface-bright": "#f9f9ff",
+            "inverse-primary": "#ffb95f",
+            "on-secondary-container": "#596373",
+            "outline": "#867461",
+            "on-primary-fixed-variant": "#653e00",
+            "on-secondary-fixed": "#121c2a",
+            "on-secondary-fixed-variant": "#3d4756",
+            "surface-container-lowest": "#ffffff",
+            "surface-container": "#e9edff",
+            "primary-container": "#f59e0b",
+            "outline-variant": "#d8c3ad",
+            "on-error-container": "#93000a",
+            "primary": "#855300",
+            "secondary-fixed-dim": "#bdc7d9",
+            "primary-fixed": "#ffddb8",
+            "tertiary": "#555f6d",
+            "tertiary-fixed": "#d9e3f4",
+            "inverse-on-surface": "#edf0ff",
+            "secondary-container": "#d6e0f3",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#613b00",
+            "surface-container-highest": "#dce2f7",
+            "tertiary-fixed-dim": "#bdc7d8",
+            "on-surface-variant": "#534434",
+            "background": "#f9f9ff",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed": "#2a1700",
+            "on-tertiary-fixed-variant": "#3e4755",
+            "tertiary-container": "#a8b2c2",
+            "on-tertiary-container": "#3b4552",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "surface-dim": "#d3daef",
+            "on-error": "#ffffff",
+            "surface": "#f9f9ff",
+            "surface-tint": "#855300",
+            "secondary": "#555f6f",
+            "inverse-surface": "#293040",
+            "on-background": "#141b2b",
+            "on-surface": "#141b2b",
+            "surface-variant": "#dce2f7",
+            "secondary-fixed": "#d9e3f6"
+          },
+          fontFamily: {
+            "headline": ["Noto Serif"],
+            "body": ["Manrope"],
+            "label": ["Manrope"]
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "1rem", "xl": "1.25rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Manrope', sans-serif;
+      background-color: #f9f9ff;
+      color: #141b2b;
+    }
+
+    .font-serif {
+      font-family: 'Noto Serif', serif;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .tonal-shift {
+      background-color: rgba(241, 243, 255, 0.5);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px);
+    }
+
+    .premium-gradient {
+      background: linear-gradient(135deg, #855300 0%, #f59e0b 100%);
+    }
+
+    .slide-section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 7rem 2rem;
+      break-after: page;
+    }
+
+    @page {
+      margin: 0;
+      size: A4 landscape;
+    }
+
+    @media print {
+
+      html,
+      body {
+        height: 100%;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+      }
+
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      header,
+      aside {
+        display: none !important;
+      }
+
+      .slide-section {
+        margin: 0 !important;
+        padding: 40px !important;
+        /* Balanced padding for the slide content */
+        height: 100vh !important;
+        width: 100vw !important;
+        display: flex !important;
+        page-break-after: always !important;
+        break-after: page !important;
+        break-inside: avoid !important;
+        overflow: hidden !important;
+        position: relative !important;
+      }
+
+      /* Ensure images don't overflow */
+      img {
+        max-height: 100% !important;
+        object-fit: cover;
+      }
+
+      @page {
+        size: 1920px 1080px;
+        /* Force a presentation aspect ratio */
+        margin: 0;
+      }
+    }
+
+    /* Custom Cursor Elements */
+    #custom-cursor {
+        transition: width 0.2s, height 0.2s, background-color 0.2s;
+    }
+    #custom-cursor-follower {
+        transition: width 0.3s, height 0.3s, border-color 0.3s, background-color 0.3s;
+    }
+  </style>
+</head>
+
+<body class="bg-surface text-on-surface">
+  <!-- Custom Circle Cursor -->
+  <div id="custom-cursor" class="hidden lg:block fixed pointer-events-none z-[9999] w-3 h-3 bg-amber-500 rounded-full mix-blend-difference -translate-x-1/2 -translate-y-1/2 transition-transform duration-100 ease-out"></div>
+  <div id="custom-cursor-follower" class="hidden lg:block fixed pointer-events-none z-[9998] w-8 h-8 border-2 border-amber-500 rounded-full -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out"></div>
+  <!-- TopAppBar -->
+  <header class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl">
+    <div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+      <a class="flex items-center gap-2 text-2xl font-serif font-bold tracking-tight text-slate-900 dark:text-slate-50"
+        href="index.html">
+        <img src="photo-video/logo.png" alt="DBD Studio Logo" class="h-8" loading="lazy">
+        <span>DBD Studio</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8">
+        <a class="font-sans font-medium text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
+          href="#vision">Vision</a>
+        <a class="font-sans font-medium text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
+          href="#services">Services</a>
+        <a class="font-sans font-medium text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
+          href="#portfolio">Portfolio</a>
+        <a class="font-sans font-medium text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
+          href="#edge">Edge</a>
+        <button
+          class="ml-4 px-6 py-2.5 premium-gradient text-on-primary font-bold rounded-lg text-sm transition-all duration-300 hover:shadow-lg active:scale-95">
+          Start Your Project
+        </button>
+      </nav>
+    </div>
+  </header>
+  <!-- SideNavBar (Navigation Anchors) -->
+  <aside class="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden lg:block">
+    <div class="flex flex-col gap-6 items-center">
+      <a class="w-3 h-3 bg-amber-600 dark:bg-amber-500 rounded-full scale-125 cursor-pointer transition-transform hover:scale-110"
+        href="#cover" title="Cover"></a>
+      <a class="w-2 h-2 bg-slate-300 dark:bg-slate-700 rounded-full hover:bg-slate-400 dark:hover:bg-slate-600 cursor-pointer transition-transform hover:scale-110"
+        href="#vision" title="Vision"></a>
+      <a class="w-2 h-2 bg-slate-300 dark:bg-slate-700 rounded-full hover:bg-slate-400 dark:hover:bg-slate-600 cursor-pointer transition-transform hover:scale-110"
+        href="#specialization" title="Specialization"></a>
+      <a class="w-2 h-2 bg-slate-300 dark:bg-slate-700 rounded-full hover:bg-slate-400 dark:hover:bg-slate-600 cursor-pointer transition-transform hover:scale-110"
+        href="#portfolio" title="Portfolio"></a>
+      <a class="w-2 h-2 bg-slate-300 dark:bg-slate-700 rounded-full hover:bg-slate-400 dark:hover:bg-slate-600 cursor-pointer transition-transform hover:scale-110"
+        href="#edge" title="The Edge"></a>
+      <a class="w-2 h-2 bg-slate-300 dark:bg-slate-700 rounded-full hover:bg-slate-400 dark:hover:bg-slate-600 cursor-pointer transition-transform hover:scale-110"
+        href="#contact" title="Contact"></a>
+    </div>
+  </aside>
+  <main>
+    <!-- 1. Cover Slide -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden" id="cover">
+      <div class="absolute inset-0 z-0">
+        <img alt="Modern architectural interior" class="w-full h-full object-cover  brightness-75"
+          data-alt="Modern high-end minimal architectural living space interior"
+          src="photo-video/WhatsApp Image 2025-08-11 at 10.51.15 (1).jpeg" />
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-4xl">
+        <span class="label-md uppercase tracking-[0.3em] text-white/80 mb-6 block font-label">Architectural
+          Curators</span>
+        <h1 class="font-serif text-6xl md:text-8xl lg:text-9xl text-white tracking-tighter mb-8">
+          DBD Studio
+        </h1>
+        <p class="font-body text-xl md:text-2xl text-white/90 font-light mb-12 max-w-2xl mx-auto leading-relaxed">
+          Transforming Retail &amp; Residential Spaces into Remarkable Experiences.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a class="px-10 py-4 premium-gradient text-on-primary font-bold rounded-lg text-lg transition-transform hover:scale-105 active:scale-95 shadow-2xl"
+            href="#vision">
+            Explore Our Vision
+          </a>
+        </div>
+      </div>
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 animate-bounce">
+        <span class="material-symbols-outlined text-3xl"
+          data-icon="keyboard_double_arrow_down">keyboard_double_arrow_down</span>
+      </div>
+    </section>
+    <!-- 2. The Visionary -->
+    <section class="slide-section bg-surface-container-low" id="vision">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-5 relative">
+          <div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl">
+            <img alt="Beulah Hephzibah" class="w-full h-full object-cover  brightness-75"
+              data-alt="Conceptual architectural background for Principal Architect"
+              src="photo-video/WhatsApp Image 2025-08-11 at 10.51.15 (1).jpeg" />
+          </div>
+          <div class="absolute -bottom-6 -right-6 glass-card p-6 rounded-lg shadow-xl max-w-xs border border-white/20">
+            <p class="font-serif italic text-on-surface-variant text-lg leading-relaxed">
+              "We don't just build structures; we curate the life that happens within them."
+            </p>
+          </div>
+        </div>
+        <div class="lg:col-span-7 lg:pl-12">
+          <span class="label-md font-bold text-primary uppercase tracking-widest mb-4 block">The Visionary</span>
+          <h2 class="font-serif text-5xl md:text-6xl text-on-background mb-8 leading-tight">
+            Beulah Hephzibah
+          </h2>
+          <p class="font-body text-lg text-on-surface-variant mb-6 leading-relaxed">
+            Principal Architect &amp; Founder of DBD Studio, Beulah brings a transformative approach to the built
+            environment. Her philosophy centers on bridging the gap between clinical structural integrity and the
+            profound nuances of human experience.
+          </p>
+          <p class="font-body text-lg text-on-surface-variant leading-relaxed mb-8">
+            With a career spanning over a decade of luxury retail and bespoke residential projects, she has mastered the
+            art of "Architectural Curation"—treating every space as a living gallery of brand identity and personal
+            narrative.
+          </p>
+          <div class="flex gap-4">
+            <div class="h-[2px] w-12 bg-primary self-center"></div>
+            <span class="font-serif text-xl italic text-on-surface">Designing with Intent</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 3. Our Specialization -->
+    <section class="slide-section bg-surface" id="specialization">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-20 text-center">
+          <h2 class="font-serif text-5xl md:text-6xl text-on-background mb-4">Core Expertise</h2>
+          <div class="w-24 h-1 bg-primary mx-auto"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <!-- Left Column -->
+          <div
+            class="bg-surface-container-lowest p-12 rounded-xl shadow-md border border-outline-variant/10 group transition-all duration-500 hover:shadow-2xl">
+            <div
+              class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-on-primary-fixed text-3xl"
+                data-icon="architecture">architecture</span>
+            </div>
+            <h3 class="font-serif text-3xl text-on-background mb-6">Retail &amp; Residential Interior Design</h3>
+            <p class="font-body text-on-surface-variant leading-relaxed mb-6">
+              We specialize in crafting brand narratives through spatial design. For retail, we create immersive
+              environments that drive engagement. For residential, we define luxury through intimacy and functional
+              elegance.
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3 font-body text-sm font-medium">
+                <span class="material-symbols-outlined text-primary text-lg"
+                  data-icon="check_circle">check_circle</span>
+                Narrative-Driven Concepts
+              </li>
+              <li class="flex items-center gap-3 font-body text-sm font-medium">
+                <span class="material-symbols-outlined text-primary text-lg"
+                  data-icon="check_circle">check_circle</span>
+                Bespoke Material Sourcing
+              </li>
+              <li class="flex items-center gap-3 font-body text-sm font-medium">
+                <span class="material-symbols-outlined text-primary text-lg"
+                  data-icon="check_circle">check_circle</span>
+                Space Optimization Strategies
+              </li>
+            </ul>
+          </div>
+          <!-- Right Column -->
+          <div
+            class="bg-surface-container-lowest p-12 rounded-xl shadow-md border border-outline-variant/10 group transition-all duration-500 hover:shadow-2xl">
+            <div
+              class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-on-primary-fixed text-3xl"
+                data-icon="construction">construction</span>
+            </div>
+            <h3 class="font-serif text-3xl text-on-background mb-6">Turnkey Fit-Out Solutions</h3>
+            <p class="font-body text-on-surface-variant leading-relaxed mb-6">
+              From blueprint to handover, we offer end-to-end execution. Our project management team ensures that every
+              detail of the design is realized with surgical precision, on time, and within the curated budget.
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3 font-body text-sm font-medium">
+                <span class="material-symbols-outlined text-primary text-lg"
+                  data-icon="check_circle">check_circle</span>
+                Seamless Project Management
+              </li>
+              <li class="flex items-center gap-3 font-body text-sm font-medium">
+                <span class="material-symbols-outlined text-primary text-lg"
+                  data-icon="check_circle">check_circle</span>
+                Precision Civil Execution
+              </li>
+              <li class="flex items-center gap-3 font-body text-sm font-medium">
+                <span class="material-symbols-outlined text-primary text-lg"
+                  data-icon="check_circle">check_circle</span>
+                Quality Control &amp; Assurance
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 4. Portfolio Highlights -->
+    <section class="slide-section bg-surface-container-high/30" id="portfolio">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div class="max-w-xl">
+            <span class="label-md font-bold text-primary uppercase tracking-widest mb-4 block">The Portfolio</span>
+            <h2 class="font-serif text-5xl md:text-6xl text-on-background leading-tight">Curated Works</h2>
+          </div>
+          <p class="font-body text-on-surface-variant max-w-sm mb-2">A visual testament to our commitment to structural
+            excellence and aesthetic narrative.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 grid-rows-2 gap-6 h-auto md:h-[800px]">
+          <!-- Section A: Retail Narrative -->
+          <div class="md:col-span-8 md:row-span-1 relative group overflow-hidden rounded-xl">
+            <img alt="Retail Narrative"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              data-alt="Luxury retail store interior with modern wood and glass" src="photo-video/CHUMBAK.jpeg" />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8">
+              <h4 class="text-white font-serif text-3xl mb-2">Retail Narrative</h4>
+              <p class="text-white/70 font-body text-sm">Chumbak • Frangipani • Signature Boutiques</p>
+            </div>
+          </div>
+          <!-- Section B: Culinary Spaces -->
+          <div class="md:col-span-4 md:row-span-2 relative group overflow-hidden rounded-xl">
+            <img alt="Culinary Spaces"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              data-alt="Modern aesthetic cafe interior with minimal furniture"
+              src="photo-video/new/brown_boy_cafe.jpeg" />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8">
+              <h4 class="text-white font-serif text-3xl mb-2">Culinary Spaces</h4>
+              <p class="text-white/70 font-body text-sm">Brown Boy Cafe • Murmura • Gourmet Hubs</p>
+            </div>
+          </div>
+          <!-- Section C: Luxe Living -->
+          <div class="md:col-span-8 md:row-span-1 relative group overflow-hidden rounded-xl">
+            <img alt="Luxe Living"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              data-alt="High-end luxury residential living room with grand windows"
+              src="photo-video/new/the_trost_inside.jpeg" />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8">
+              <h4 class="text-white font-serif text-3xl mb-2">Luxe Living</h4>
+              <p class="text-white/70 font-body text-sm">The Trost • Signature Felicity • Private Estates</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 5. The DBD Edge -->
+    <section class="slide-section bg-surface" id="edge">
+      <div class="max-w-7xl mx-auto text-center px-4">
+        <span class="label-md font-bold text-primary uppercase tracking-widest mb-4 block">Our Advantage</span>
+        <h2 class="font-serif text-5xl md:text-6xl text-on-background mb-20">The DBD Edge</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+          <div class="flex flex-col items-center">
+            <div
+              class="mb-8 p-6 bg-surface-container rounded-full group hover:bg-primary transition-colors duration-300">
+              <span class="material-symbols-outlined text-4xl text-primary group-hover:text-white transition-colors"
+                data-icon="insights">insights</span>
+            </div>
+            <h3 class="font-serif text-2xl text-on-background mb-4">Strategy-First Approach</h3>
+            <p class="font-body text-on-surface-variant leading-relaxed">
+              We don't start with aesthetics; we start with objectives. Every design choice is anchored in human
+              behavior and brand strategy.
+            </p>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="mb-8 p-6 bg-surface-container rounded-full group hover:bg-primary transition-colors duration-300">
+              <span class="material-symbols-outlined text-4xl text-primary group-hover:text-white transition-colors"
+                data-icon="lightbulb">lightbulb</span>
+            </div>
+            <h3 class="font-serif text-2xl text-on-background mb-4">Innovation-Driven</h3>
+            <p class="font-body text-on-surface-variant leading-relaxed">
+              Leveraging the latest in smart materials and spatial tech to create environments that are both futuristic
+              and timeless.
+            </p>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="mb-8 p-6 bg-surface-container rounded-full group hover:bg-primary transition-colors duration-300">
+              <span class="material-symbols-outlined text-4xl text-primary group-hover:text-white transition-colors"
+                data-icon="eco">eco</span>
+            </div>
+            <h3 class="font-serif text-2xl text-on-background mb-4">Sustainability-Conscious</h3>
+            <p class="font-body text-on-surface-variant leading-relaxed">
+              Design that respects the environment through circular materials and energy-efficient spatial planning.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 6. Partner with us -->
+    <section class="slide-section bg-surface-container-low relative overflow-hidden" id="contact">
+      <div class="max-w-4xl mx-auto text-center px-6 relative z-10">
+        <h2 class="font-serif text-5xl md:text-7xl text-on-background mb-10 leading-tight">Ready to curate your vision?
+        </h2>
+        <p class="font-body text-xl text-on-surface-variant mb-16 leading-relaxed">
+          Let's discuss how we can transform your space into a definitive landmark of style and function.
+        </p>
+        <button
+          class="px-12 py-5 premium-gradient text-on-primary font-bold rounded-lg text-xl transition-transform hover:scale-105 active:scale-95 shadow-2xl mb-24">
+          Start Your Project
+        </button>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left border-t border-outline-variant/30 pt-16">
+          <div>
+            <span class="label-md font-bold uppercase tracking-widest text-primary mb-4 block">Visit Us</span>
+            <address class="not-italic font-body text-on-surface-variant leading-relaxed">
+              Electronic City,<br />
+              Bangalore,<br />
+              Karnataka 560100
+            </address>
+          </div>
+          <div>
+            <span class="label-md font-bold uppercase tracking-widest text-primary mb-4 block">Inquiries</span>
+            <a class="font-serif text-2xl text-on-background hover:text-primary transition-colors"
+              href="mailto:hello@dbdstudio.com">
+              hello@dbdstudio.com
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Decorative architectural lines -->
+      <div class="absolute right-0 bottom-0 w-1/3 h-1/2 opacity-5 pointer-events-none">
+        <svg class="w-full h-full" viewbox="0 0 100 100">
+          <line stroke="currentColor" stroke-width="0.5" x1="0" x2="100" y1="100" y2="0"></line>
+          <line stroke="currentColor" stroke-width="0.5" x1="20" x2="100" y1="100" y2="20"></line>
+          <line stroke="currentColor" stroke-width="0.5" x1="40" x2="100" y1="100" y2="40"></line>
+        </svg>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="w-full py-12 px-8 bg-slate-50 dark:bg-slate-950 border-t border-slate-200/50 dark:border-slate-800/50">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+      <div class="flex flex-col items-center md:items-start gap-2">
+        <span class="text-lg font-serif font-semibold text-slate-900 dark:text-slate-100">DBD Studio</span>
+        <p class="font-sans text-xs tracking-wide text-slate-500">© 2026 DBD Studio. Built for the Architectural Curator.</p>
+      </div>
+      <div class="flex gap-8">
+        <a class="font-sans text-xs tracking-wide text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:underline underline-offset-4 transition-all opacity-80 hover:opacity-100"
+          href="#">Privacy Policy</a>
+        <a class="font-sans text-xs tracking-wide text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:underline underline-offset-4 transition-all opacity-80 hover:opacity-100"
+          href="#">Terms of Service</a>
+        <a class="font-sans text-xs tracking-wide text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:underline underline-offset-4 transition-all opacity-80 hover:opacity-100"
+          href="#">Press Kit</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+      // Premium Custom Cursor Followers
+      const cursor = document.getElementById('custom-cursor');
+      const follower = document.getElementById('custom-cursor-follower');
+      
+      let mouseX = 0;
+      let mouseY = 0;
+      let followerX = 0;
+      let followerY = 0;
+
+      window.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          cursor.style.left = mouseX + 'px';
+          cursor.style.top = mouseY + 'px';
+      });
+
+      function animateFollower() {
+          const ease = 0.15;
+          followerX += (mouseX - followerX) * ease;
+          followerY += (mouseY - followerY) * ease;
+          follower.style.left = followerX + 'px';
+          follower.style.top = followerY + 'px';
+          requestAnimationFrame(animateFollower);
+      }
+      animateFollower();
+
+      // Hover expansions for premium responsiveness
+      const interactiveElements = document.querySelectorAll('a, button, input, textarea');
+      interactiveElements.forEach(el => {
+          el.addEventListener('mouseenter', () => {
+              cursor.classList.add('scale-75');
+              follower.classList.add('scale-150', 'bg-amber-500/10');
+          });
+          el.addEventListener('mouseleave', () => {
+              cursor.classList.remove('scale-75');
+              follower.classList.remove('scale-150', 'bg-amber-500/10');
+          });
+      });
+  </script>
+</body>
+
+</html>
