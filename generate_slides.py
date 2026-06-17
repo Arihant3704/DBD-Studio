@@ -631,7 +631,7 @@ def main():
         <div class="flex flex-row gap-8">
             <!-- Case Study 1 -->
             <div class="w-1/2 bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm flex flex-col justify-between h-340">
-                <div class="h-170 bg-cover bg-center" style="background-image: url('../photo-video/WhatsApp Image 2025-08-11 at 10.51.32 (2).jpeg');"></div>
+                <div class="h-170 bg-cover bg-center" style="background-image: url('../photo-video/unused/WhatsApp Image 2025-08-11 at 10.51.32 (2).jpeg');"></div>
                 <div class="p-5 flex-1 flex flex-col justify-between">
                     <div>
                         <h3 class="font-serif text-base font-bold text-gray-900 mb-2">S.L. Shet Diamond House</h3>
@@ -751,7 +751,7 @@ def main():
             <div class="w-1/2 bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm flex flex-col justify-between h-340">
                 <div class="h-170 flex flex-row">
                     <div class="w-1/2 h-full bg-cover bg-center" style="background-image: url('../photo-video/new/brown_boy_cafe.jpeg');"></div>
-                    <div class="w-1/2 h-full bg-cover bg-center" style="background-image: url('../photo-video/new/brown_boy_cafe_interior.jpeg');"></div>
+                    <div class="w-1/2 h-full bg-cover bg-center" style="background-image: url('../photo-video/unused/brown_boy_cafe_interior.jpeg');"></div>
                 </div>
                 <div class="p-5 flex-1 flex flex-col justify-between">
                     <div>
@@ -834,7 +834,7 @@ def main():
 
             <!-- Case Study 2 -->
             <div class="w-1/2 bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm flex flex-col justify-between h-340">
-                <div class="h-170 bg-cover bg-center" style="background-image: url('../photo-video/WhatsApp Image 2025-08-11 at 10.51.35 (1).jpeg');"></div>
+                <div class="h-170 bg-cover bg-center" style="background-image: url('../photo-video/unused/WhatsApp Image 2025-08-11 at 10.51.35 (1).jpeg');"></div>
                 <div class="p-5 flex-1 flex flex-col justify-between">
                     <div>
                         <h3 class="font-serif text-base font-bold text-gray-900 mb-2">Cafe Murmura</h3>

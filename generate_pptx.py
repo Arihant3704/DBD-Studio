@@ -68,15 +68,15 @@ set_slide_bg(slide3, color=RGBColor(255, 255, 255))
 add_title(slide3, "Retail Narrative & Spatial Branding", Inches(1), Inches(0.5), Inches(14), Inches(1))
 if os.path.exists("photo-video/CHUMBAK.jpeg"):
     slide3.shapes.add_picture("photo-video/CHUMBAK.jpeg", Inches(1), Inches(2), width=Inches(6.5), height=Inches(5))
-if os.path.exists("photo-video/WhatsApp Image 2025-08-11 at 10.51.32 (2).jpeg"):
-    slide3.shapes.add_picture("photo-video/WhatsApp Image 2025-08-11 at 10.51.32 (2).jpeg", Inches(8.5), Inches(2), width=Inches(6.5), height=Inches(5))
+if os.path.exists("photo-video/unused/WhatsApp Image 2025-08-11 at 10.51.32 (2).jpeg"):
+    slide3.shapes.add_picture("photo-video/unused/WhatsApp Image 2025-08-11 at 10.51.32 (2).jpeg", Inches(8.5), Inches(2), width=Inches(6.5), height=Inches(5))
 
 # Slide 4: Culinary Hubs
 slide4 = prs.slides.add_slide(blank_slide_layout)
 set_slide_bg(slide4)
 add_title(slide4, "Culinary Hubs.", Inches(1), Inches(1), Inches(10), Inches(1))
-if os.path.exists("photo-video/new/brown_boy_cafe_interior.jpeg"):
-    slide4.shapes.add_picture("photo-video/new/brown_boy_cafe_interior.jpeg", Inches(1), Inches(2.2), width=Inches(4.5), height=Inches(5))
+if os.path.exists("photo-video/unused/brown_boy_cafe_interior.jpeg"):
+    slide4.shapes.add_picture("photo-video/unused/brown_boy_cafe_interior.jpeg", Inches(1), Inches(2.2), width=Inches(4.5), height=Inches(5))
 if os.path.exists("photo-video/new/sandowitch_inside_view.jpeg"):
     slide4.shapes.add_picture("photo-video/new/sandowitch_inside_view.jpeg", Inches(6), Inches(2.2), width=Inches(4.5), height=Inches(5))
 add_subtitle(slide4, "F&B Strategy:\nPartnering with gourmet hubs to define atmospheric dining.", Inches(11), Inches(2.2), Inches(4), Inches(2), color=COLOR_AMBER)
@@ -88,7 +88,7 @@ add_title(slide5, "Luxury Residential.", Inches(1), Inches(0.8), Inches(10), Inc
 img_configs = [
     ("photo-video/new/the_trost_inside.jpeg", 0.5),
     ("photo-video/new/the_trost_outside.jpeg", 4.3),
-    ("photo-video/generated/sl_shet_interior.png", 8.1),
+    ("photo-video/unused/sl_shet_interior.png", 8.1),
     ("photo-video/SIGNATURE FELICITY.jpeg", 11.9)
 ]
 for path, left in img_configs:
@@ -115,8 +115,8 @@ slide8 = prs.slides.add_slide(blank_slide_layout)
 set_slide_bg(slide8, color=RGBColor(255, 255, 255))
 add_title(slide8, "The DBD Edge.", Inches(1), Inches(1), Inches(7), Inches(1))
 add_subtitle(slide8, "- ROI Focused Design\n- Sustainable Brutalism\n- Turnkey civil mastery", Inches(1), Inches(2.5), Inches(6), Inches(3))
-if os.path.exists("photo-video/generated/dbd_edge_materials.png"):
-    slide8.shapes.add_picture("photo-video/generated/dbd_edge_materials.png", Inches(8), Inches(0), width=Inches(8), height=Inches(9))
+if os.path.exists("photo-video/unused/dbd_edge_materials.png"):
+    slide8.shapes.add_picture("photo-video/unused/dbd_edge_materials.png", Inches(8), Inches(0), width=Inches(8), height=Inches(9))
 
 # Slide 9: Global Vision
 slide9 = prs.slides.add_slide(blank_slide_layout)
